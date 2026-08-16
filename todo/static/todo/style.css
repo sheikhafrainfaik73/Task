@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.input-area {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#addBtn {
+    padding: 8px 14px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addBtn:hover {
+    background: #45a049;
+}
+
+/* Priority Selector Styles */
+.priority-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.priority-selector span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.priority-btn {
+    padding: 6px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+.priority-btn:hover {
+    transform: scale(1.05);
+}
+
+.priority-btn.active {
+    border-color: #333;
+    background: #f0f0f0;
+}
+
+.priority-btn[data-priority="high"] {
+    border-color: #ff4444;
+    color: #cc0000;
+}
+
+.priority-btn[data-priority="high"].active {
+    background: #ff4444;
+    color: white;
+}
+
+.priority-btn[data-priority="medium"] {
+    border-color: #ffaa00;
+    color: #cc8800;
+}
+
+.priority-btn[data-priority="medium"].active {
+    background: #ffaa00;
+    color: white;
+}
+
+.priority-btn[data-priority="low"] {
+    border-color: #44bb44;
+    color: #008800;
+}
+
+.priority-btn[data-priority="low"].active {
+    background: #44bb44;
+    color: white;
+}
+
+/* Task List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+li:hover {
+    background: #fafafa;
+}
+
+li.done span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.priority-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.priority-indicator.high {
+    background: #ff4444;
+}
+
+.priority-indicator.medium {
+    background: #ffaa00;
+}
+
+.priority-indicator.low {
+    background: #44bb44;
+}
+
+.priority-label {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 5px;
+}
+
+.priority-label.high {
+    background: #ff4444;
+}
+
+.priority-label.medium {
+    background: #ffaa00;
+}
+
+.priority-label.low {
+    background: #44bb44;
+}
+
+.points-badge {
+    font-size: 12px;
+    color: #666;
+    margin-left: 5px;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Total Points Display */
+.total-points {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#totalPoints {
+    color: #2196F3;
+    font-size: 20px;
+}

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>My To-Do App</title>
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do List</h1>
+        
+        <!-- Task Input Section -->
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Add a new task..." />
+            <button id="addBtn">Add</button>
+        </div>
+        
+        <!-- Priority Buttons -->
+        <div class="priority-selector">
+            <span>Priority:</span>
+            <button class="priority-btn" data-priority="high" id="priorityHigh">
+                🔴 High (3 pts)
+            </button>
+            <button class="priority-btn" data-priority="medium" id="priorityMedium">
+                🟡 Medium (2 pts)
+            </button>
+            <button class="priority-btn" data-priority="low" id="priorityLow">
+                🟢 Low (1 pt)
+            </button>
+        </div>
+        
+        <!-- Task List -->
+        <ul id="taskList"></ul>
+        
+        <!-- Total Points Display -->
+        <div class="total-points">
+            Total Priority Points: <span id="totalPoints">0</span>
+        </div>
+    </div>
+    
+    <script>
+        const CSRFTOKEN = "{{ csrf_token }}";
+    </script>
+    <script src="{% static 'todo/script.js' %}"></script>
+</body>
+</html>
